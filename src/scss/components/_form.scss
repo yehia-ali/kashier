@@ -1,0 +1,164 @@
+label {
+  font: normal normal normal 14px/21px $main-fonts;
+  color: $brand-black;
+  margin-bottom: 6px;
+}
+
+input {
+  &.form-control {
+    height: 42px;
+    @extend %border-alto;
+    @extend %border-radius;
+    font: normal normal 300 12px/18px $main-fonts;
+    color: $brand-black;
+  }
+}
+
+.input-group {
+  .input-group-text {
+    font: normal normal normal 14px/21px $main-fonts;
+    color: $brand-black;
+    background: $brand-white;
+    width: 50px;
+    text-align: center;
+    display: inline-grid;
+  }
+}
+
+.form-check {
+  [type="checkbox"] {
+    &:checked {
+      background-color: $brand-primary;
+      border-color: $brand-primary;
+    }
+  }
+
+  [type="radio"] {
+    &:checked {
+      position: absolute;
+      left: -9999px;
+
+      + {
+        label {
+          position: relative;
+          padding-left: 28px;
+          display: inline-block;
+          color: $brand-black;
+
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border: 2px solid $brand-primary;
+            border-radius: 100%;
+            background: $brand-white;
+          }
+
+          &:after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: $brand-primary;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            border-radius: 100%;
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+          }
+        }
+      }
+    }
+
+    &:not(:checked) {
+      position: absolute;
+      left: -9999px;
+
+      + {
+        label {
+          position: relative;
+          padding-left: 28px;
+          cursor: pointer;
+          color: $brand-black;
+
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border: 2px solid $brand-alto;
+            border-radius: 100%;
+            background: $brand-white;
+          }
+
+          &:after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: $brand-primary;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            border-radius: 100%;
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+            opacity: 0;
+            -webkit-transform: scale(0);
+            transform: scale(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+.ng-select {
+  .ng-select-container {
+    height: 42px !important;
+    @extend %border-alto;
+    @extend %border-radius;
+    font: normal normal 300 12px/18px $main-fonts;
+    color: $brand-gray;
+  }
+
+  .ng-dropdown-panel {
+    &.ng-select-bottom {
+      top: 110%;
+      @extend %border-alto;
+      @extend %border-radius;
+      padding: 5px;
+
+      .input-group {
+        input {
+          @extend %border-alto;
+          @extend %border-radius;
+          height: 38px;
+        }
+      }
+    }
+
+    .ng-option {
+      padding: 9px;
+      font: normal normal normal 14px/21px $main-fonts;
+      color: $brand-black;
+    }
+  }
+}
+.actions-footer {
+  @include media-breakpoint-down(lg) {    
+    position: sticky;
+    left: 0;
+    bottom: -75px;
+    right: 0;
+    background: $brand-whiteLilac;
+    height: 153px;
+    z-index: 999;
+  }
+}

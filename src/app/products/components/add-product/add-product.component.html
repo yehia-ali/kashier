@@ -1,0 +1,123 @@
+
+<div class="row">  
+  <div class="col-lg-12">
+    <div class="mb-4">
+      <app-product></app-product>
+    </div>
+  </div>
+  <div class="col-md-8 col-lg-6">
+    <form class="row needs-validation" novalidate (ngSubmit)="formSubmit(manageProductForm.value)" [formGroup]="manageProductForm">
+      <div class="col-lg-12">
+        <div class="mb-4">
+          <label for="ProductName" class="form-label d-inline-block">Product name</label>
+          <input type="text" class="form-control" id="ProductName" placeholder="Name" formControlName="productName" [ngClass]="{'is-invalid': manageProduct && type['productName'].errors}" >
+            <div  class="invalid-feedback" *ngIf="manageProduct && type['productName'].errors && type['productName'].errors['required']">Product Name is required.</div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="mb-4">
+          <label class="form-label d-inline-block">Product type</label>
+          <div>
+            <div class="form-check form-check-inline px-0">
+              <input class="form-check-input" type="radio" name="productType" id="TypeOne" value="TypeOne" formControlName="productType">
+              <label class="form-check-label" for="TypeOne">Type 1</label>
+            </div>
+            <div class="form-check form-check-inline px-0">
+              <input class="form-check-input" type="radio" name="productType" id="TypeTwo" value="TypeTwo" formControlName="productType">
+              <label class="form-check-label" for="TypeTwo">Type 2</label>
+            </div>
+            <div  class="invalid-feedback" *ngIf="manageProduct && type['productType'].errors && type['productType'].errors['required']">Name is required.</div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-12">
+        <div class="mb-4">
+          <label for="ProductCategory" class="form-label d-inline-block">Product Category</label>
+          <input type="text" class="form-control" id="ProductCategory" placeholder="Category" formControlName="productCategory" [ngClass]="{'is-invalid': manageProduct && type['productCategory'].errors}">
+          <div  class="invalid-feedback" *ngIf="manageProduct && type['productCategory'].errors && type['productCategory'].errors['required']">Product Category is required.</div>
+
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="mb-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="subCategory" formControlName="productSubCategory">
+            <label class="form-check-label" for="subCategory">
+              This is a sub-category
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="mb-4">
+          <label for="ReferenceID" class="form-label d-inline-block">Reference ID <span
+              class="text-gray opacity-80">(Optional)</span> </label>
+          <input type="text" class="form-control" id="ReferenceID" placeholder="ID" formControlName="referenceID">
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="mb-4">
+          <label for="Password" class="form-label d-inline-block">Password</label>
+          <div class="input-group mb-3">
+            <input [type]="typeInput" class="form-control" id="Password" placeholder="Password" formControlName="password" [ngClass]="{'is-invalid': manageProduct && type['password'].errors}">
+            <button type="button" class="btn position-absolute end-0 border-0"><img [src]="passwordIcon"
+                (click)="showPassword(typeInput)"></button>
+            <div  class="invalid-feedback" *ngIf="manageProduct && type['password'].errors && type['password'].errors['required']">password is required.</div>
+            <div  class="invalid-feedback" *ngIf="manageProduct && type['password'].errors && type['password'].errors['pattern']">password example Code-1234 .</div>
+
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="mb-4">
+          <label for="Delivery" class="form-label d-inline-block">Delivery fees</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="Delivery">EGP</span>
+            <input type="text" class="form-control" placeholder="Delivery fees" formControlName="delivery" [ngClass]="{'is-invalid': manageProduct && type['delivery'].errors}">
+            <div  class="invalid-feedback" *ngIf="manageProduct && type['delivery'].errors && type['delivery'].errors['required']">delivery is required.</div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="mb-4">
+          <label for="fees" class="form-label d-inline-block">Delivery fees</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="fees">%</span>
+            <input type="text" class="form-control" placeholder="Delivery fees" formControlName="deliveryPercentage" [ngClass]="{'is-invalid': manageProduct && type['deliveryPercentage'].errors}">
+            <div  class="invalid-feedback" *ngIf="manageProduct && type['deliveryPercentage'].errors && type['deliveryPercentage'].errors['max']">Percentage should be less than 100.</div>
+          </div>
+        </div>
+      </div>
+      <div class="actions-footer">
+        <div class="row">
+          <div class="col-3 col-lg-2">
+            <button *ngIf="editMood" type="button" class="btn text-danger border-0 w-100 p-0 mt-3 text-start" (click)="conformationDelete()">Delete</button>
+          </div>
+    
+            <div class="col-3 offset-3 col-lg-2 offset-lg-6">
+              <button type="button" class="btn text-gray border-0 w-100 mt-3" routerLink="/">Cancel</button>
+            </div>
+            <div class="col-3 col-lg-2">
+              <button type="button" class="btn btn-primary w-100 mt-3" (click)="conformationAddOrEdit()">Save</button>
+            </div>
+    
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- toast -->
+<app-toast *ngIf="loading" [toastDescription]="toastMsg" ></app-toast>
+<!-- confirmation Modal  -->
+<app-modal 
+#confirmationModal 
+(newConfirmationEvent)="getConfirmationValue(actionType)" 
+[modalButtonText]="modalButtonText"
+[modalTitle]="modalTitle" 
+[modalBody]="modalBody"
+[modalButtonColor]="modalButtonColor">
+</app-modal>

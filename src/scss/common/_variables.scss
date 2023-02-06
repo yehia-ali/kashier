@@ -1,0 +1,25 @@
+// ===== Colors ======
+$brand-primary        : #00BCB4;
+$brand-success        : #00BCB4;
+$brand-secondary      : #010101;
+$brand-danger         : #C40000;
+$brand-white          : #fff;
+$brand-black          : #3D3D3D;
+$brand-alto           : #D6D6D6;
+$brand-gray           : #828282;
+$brand-whiteLilac     : #F6F7FB;
+// ==== list with all theme colors to be reused in @each =====
+$theme-colors:
+
+  // color name     	color brand         text color         secondry
+  "primary"          	$brand-primary      $brand-white       $brand-white,
+  "success"           $brand-success      $brand-white       $brand-white,
+  "secondary"         $brand-secondary    $brand-white       $brand-white,
+  "danger"            $brand-danger       $brand-white       $brand-white,
+  "alto"              $brand-alto         $brand-black       $brand-black,
+  "gray"              $brand-gray         $brand-white       $brand-white,
+  "whiteLilac"        $brand-whiteLilac   $brand-black       $brand-black;
+
+//** Global`.
+$text-color: $brand-black !default;
+$main-fonts: 'Poppins', sans-serif;;

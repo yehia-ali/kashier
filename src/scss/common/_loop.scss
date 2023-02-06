@@ -1,0 +1,31 @@
+@import "/node_modules/bootstrap/scss/_variables";
+
+// ====== Theme Colors ======
+@each $theme-color in $theme-colors {
+  $name: nth($theme-color, 1);
+  $brand-color: nth($theme-color, 2);
+  $brand-text: nth($theme-color, 3);
+
+  .bg-#{$name} {
+    background-color: $brand-color !important;
+    color: $brand-text;
+  }
+
+  .text-#{$name} {
+    color: $brand-color !important;
+  }
+
+  .border-#{$name} {
+    border-color: $brand-color !important;
+  }
+
+  .btn-#{$name} {
+    background-color: $brand-color !important;
+    color: $brand-text !important;
+    border-color: $brand-color !important;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

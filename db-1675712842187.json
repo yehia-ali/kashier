@@ -1,0 +1,48 @@
+{
+  "products": [
+    {
+      "id": 2,
+      "productName": "Product name",
+      "productType": "TypeTwo",
+      "password": "Code@1",
+      "deliveryPercentage": 17.94,
+      "delivery": 4.44,
+      "referenceID": 34,
+      "productSubCategory": true,
+      "productCategory": "smartphones"
+    },
+    {
+      "id": 4,
+      "productName": "OPPOF19",
+      "productType": "TypeTwo",
+      "password": "sssss@25799555s",
+      "deliveryPercentage": 17.91,
+      "delivery": 4.3,
+      "referenceID": 123,
+      "productSubCategory": false,
+      "productCategory": "smartphones"
+    },
+    {
+      "id": 8,
+      "productName": "Microsoft Surface Laptop 4",
+      "productType": "TypeOne",
+      "password": "Cod-@0",
+      "deliveryPercentage": 10.23,
+      "delivery": 4.43,
+      "referenceID": 68,
+      "productSubCategory": true,
+      "productCategory": "laptops"
+    },
+    {
+      "id": 9,
+      "productName": "Infinix INBOOK",
+      "productType": "TypeOne",
+      "password": 1099,
+      "deliveryPercentage": 11.83,
+      "delivery": 4.54,
+      "referenceID": 96,
+      "productSubCategory": false,
+      "productCategory": "laptops"
+    }
+  ]
+}

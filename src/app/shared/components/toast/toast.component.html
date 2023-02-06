@@ -1,0 +1,17 @@
+<div class="toast-container position-fixed {{toastPositionY}}-0 {{toastPositionX}}-0 p-3">
+    <div id="liveToast" class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header justify-content-end p-0 border-0">
+          <button class="btn border-0 py-0 px-1" type="button"data-bs-dismiss="toast" aria-label="Close">
+            <img src="../../../../assets/close.svg">
+          </button>
+    </div>
+    <div class="toast-body pt-0 pb-4">
+        <div class="mb-3">
+            <img [src]="toastIcon">
+            <span class="ms-2">
+                {{toastDescription}}
+            </span>
+        </div>
+    </div>
+    </div>
+  </div>
