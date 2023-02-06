@@ -2,17 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 ## Running the Project
-1 Clone the repository to your local machine
-2 Open a terminal and navigate to the root directory of the project.
-3 Run `npm install` to install the required dependencies.
-4 Run ng serve to start the development server.
-5 Open a web browser and navigate to `http://localhost:4200` to view the application.
+1 Clone the repository to your local machine <br>
+2 Open a terminal and navigate to the root directory of the project.<br>
+3 Run `npm install` to install the required dependencies.<br>
+4 Run ng serve to start the development server.<br>
+5 Open a web browser and navigate to `http://localhost:4200` to view the application.<br>
 ## Watching a JSON File
-1 Make sure you have json-server installed globally on your machine. If not, run `npm install -g json-server` to install it.
-2 Navigate to the directory where the JSON file is located in a terminal.
-3 Run `json-server --watch db.json` to start the server and watch the JSON file for changes.
-4 The JSON file can now be accessed at `http://localhost:3000/products`.
-5 Note: Replace `db` with the actual name of your JSON file.
+1 Make sure you have json-server installed globally on your machine. If not, run `npm install -g json-server` to install it.<br>
+2 Navigate to the directory where the JSON file is located in a terminal.<br>
+3 Run `json-server --watch db.json` to start the server and watch the JSON file for changes.<br>
+4 The JSON file can now be accessed at `http://localhost:3000/products`.<br>
+5 Note: Replace `db` with the actual name of your JSON file.<br>
 
 ## Development server
 
